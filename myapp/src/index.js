@@ -5,9 +5,22 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+function Car(props) {
+  return <h2>I am a { props.brand.model }!</h2>;
+}
+
+function Garage() {
+  const carInfo = { name: "Ford", model: "Mustang" };
+  return (
+    <>
+      <h1>Who lives in my garage?</h1>
+      <Car brand={ carInfo } />
+    </>
+  );
+}
 root.render(
   <React.StrictMode>
-    <App />
+    <Garage />
   </React.StrictMode>
 );
 
